@@ -4,14 +4,15 @@ import GameOver from './scenes/GameOver.js';
 
 const config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    width: window.innerWidth,
+    height: window.innerHeight,
+    scene: [MainMenu, GameScene, GameOver],
+    physics: { default: 'arcade', arcade: { debug: false } },
     backgroundColor: '#222',
-    physics: { 
-        default: 'arcade', 
-        arcade: { debug: false } 
-    },
-    scene: [MainMenu, GameScene, GameOver]
+    scale: {
+        mode: Phaser.Scale.RESIZE,  
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    }
 };
 
 new Phaser.Game(config);

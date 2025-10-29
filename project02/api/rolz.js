@@ -3,7 +3,7 @@ export async function rollDamage() {
     const timeout = setTimeout(() => controller.abort(), 5000); 
 
     try {
-        const response = await fetch("https://rolz.org/api/?1d10.json", {
+        const response = await fetch("https://rolz.org/api/?1d6.json", {
             signal: controller.signal
         });
         if (!response.ok) throw new Error("Failed to fetch damage roll");
